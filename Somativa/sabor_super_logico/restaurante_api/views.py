@@ -10,7 +10,7 @@ def Cliente_listarCriar(request):
     if request.method == 'GET':
         clientes = Cliente.objects.all()
         serializer = ClienteSerializer(clientes, many=True)
-        return (serializer.data)
+        return Response(serializer.data)
 
     elif request.method == 'POST':
         serializer = ClienteSerializer(data=request.data)
@@ -34,15 +34,15 @@ def Listar_Atualizar_Deletar_Cliente(request, id):
         serializer = ClienteSerializer(cliente, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Cliente Atualizado!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Cliente Atualizado!"})
+        return Response({"formato invalido"},status=status.HTTP_400_BAD_REQUEST)
     
     elif request.method == 'PATCH':
         serializer = ClienteSerializer(cliente, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Cliente Atualizado!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Cliente Atualizado!"})
+        return Response({"formato invalido"}, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
         cliente.delete()
@@ -77,15 +77,15 @@ def Listar_Atualizar_Deletar_Funcionario(request, id):
         serializer = FuncionarioSerializer(funcionario, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Funcionario Atualizado!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Funcionario Atualizado!"})
+        return Response({"formato invalido"}, status=status.HTTP_400_BAD_REQUEST)
     
     elif request.method == 'PATCH':
         serializer = FuncionarioSerializer(funcionario, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Funcionario Atualizado!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Funcionario Atualizado!"})
+        return Response({"formato invalido"}, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
         funcionario.delete()
@@ -120,15 +120,15 @@ def Listar_Atualizar_Deletar_Categoria(request, id):
         serializer = CategoriaSerializer(categoria, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Categoria Atualizada!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Categoria Atualizada!"})
+        return Response({"formato invalido"}, status=status.HTTP_400_BAD_REQUEST)
     
     elif request.method == 'PATCH':
         serializer = CategoriaSerializer(categoria, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Categoria Atualizada!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Categoria Atualizada!"})
+        return Response({"formato invalido"}, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
         categoria.delete()
@@ -163,15 +163,15 @@ def Listar_Atualizar_Deletar_Produto(request, id):
         serializer = ProdutoSerializer(produto, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Produto Atualizado!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Produto Atualizado!"})
+        return Response({"formato invalido"}, status=status.HTTP_400_BAD_REQUEST)
     
     elif request.method == 'PATCH':
         serializer = ProdutoSerializer(produto, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Produto Atualizado!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Produto Atualizado!"})
+        return Response({"formato invalido"}, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
         produto.delete()
@@ -206,15 +206,15 @@ def Listar_Atualizar_Deletar_Ingrediente(request, id):
         serializer = IngredienteSerializer(ingrediente, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Ingrediente Atualizado!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Ingrediente Atualizado!"})
+        return Response({"formato invalido"}, status=status.HTTP_400_BAD_REQUEST)
     
     elif request.method == 'PATCH':
         serializer = IngredienteSerializer(ingrediente, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Ingrediente Atualizado!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Ingrediente Atualizado!"})
+        return Response({"formato invalido"}, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
         ingrediente.delete()
@@ -249,15 +249,15 @@ def Listar_Atualizar_Deletar_Mesa(request, id):
         serializer = MesaSerializer(mesa, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Mesa Atualizada!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Mesa Atualizada!"})
+        return Response({"formato invalido"}, status=status.HTTP_400_BAD_REQUEST)
     
     elif request.method == 'PATCH':
         serializer = MesaSerializer(mesa, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Mesa Atualizada!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Mesa Atualizada!"})
+        return Response({"formato invalido"}, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
         mesa.delete()
@@ -291,15 +291,15 @@ def Listar_Atualizar_Deletar_Pedido(request, id):
         serializer = PedidoSerializer(pedido, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Pedido Atualizado!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Pedido Atualizado!"})
+        return Response({"formato invalido"}, status=status.HTTP_400_BAD_REQUEST)
     
     elif request.method == 'PATCH':
         serializer = PedidoSerializer(pedido, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Pedido Atualizado!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Pedido Atualizado!"})
+        return Response({"formato invalido"}, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
         pedido.delete()
@@ -335,15 +335,15 @@ def Listar_Atualizar_Deletar_ItemPedido(request, id):
         serializer = ItemPedidoSerializer(item_pedido, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Item do Pedido Atualizado!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Item do Pedido Atualizado!"})
+        return Response({"formato invalido"}, status=status.HTTP_400_BAD_REQUEST)
     
     elif request.method == 'PATCH':
         serializer = ItemPedidoSerializer(item_pedido, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Item do Pedido Atualizado!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Item do Pedido Atualizado!"})
+        return Response({"formato invalido"}, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
         item_pedido.delete()
@@ -378,15 +378,15 @@ def Listar_Atualizar_Deletar_Pagamento(request, id):
         serializer = PagamentoSerializer(pagamento, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Pagamento Atualizado!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Pagamento Atualizado!"})
+        return Response({"formato invalido"}, status=status.HTTP_400_BAD_REQUEST)
     
     elif request.method == 'PATCH':
         serializer = PagamentoSerializer(pagamento, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Pagamento Atualizado!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Pagamento Atualizado!"})
+        return Response({"formato invalido"}, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
         pagamento.delete()
@@ -421,15 +421,15 @@ def Listar_Atualizar_Deletar_Fornecedor(request, id):
         serializer = FornecedorSerializer(fornecedor, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Fornecedor Atualizado!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Fornecedor Atualizado!"})
+        return Response({"formato invalido"}, status=status.HTTP_400_BAD_REQUEST)
     
     elif request.method == 'PATCH':
         serializer = FornecedorSerializer(fornecedor, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Fornecedor Atualizado!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Fornecedor Atualizado!"})
+        return Response({"formato invalido"}, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
         fornecedor.delete()
@@ -464,15 +464,15 @@ def Listar_Atualizar_Deletar_Compra(request, id):
         serializer = CompraSerializer(compra, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Compra Atualizada!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Compra Atualizada!"})
+        return Response({"formato invalido"}, status=status.HTTP_400_BAD_REQUEST)
     
     elif request.method == 'PATCH':
         serializer = CompraSerializer(compra, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
-            return Response({"Compra Atualizada!"},serializer.data)
-        return Response({"formato invalido"},serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"Compra Atualizada!"})
+        return Response({"formato invalido"}, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
         compra.delete()
