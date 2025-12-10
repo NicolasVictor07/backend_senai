@@ -6,6 +6,9 @@ from .views import (Cliente_listarCriar,Listar_Atualizar_Deletar_Cliente, Funcio
                      Listar_Atualizar_Deletar_Compra, Pedido_listarCriar, Listar_Atualizar_Deletar_Pedido, ItemPedido_listarCriar, 
                      Listar_Atualizar_Deletar_ItemPedido, Pagamento_listarCriar, Listar_Atualizar_Deletar_Pagamento)
 
+# Define as rotas (endpoints) da sua API.
+# ele funciona como um "mapa": ele diz ao Django qual função (View) deve ser executada
+# quando alguém acessa um endereço específico.
 urlpatterns = [
     path('clientes/', Cliente_listarCriar, name='clientes_listar_criar'),
     path('clientes/<int:id>/', Listar_Atualizar_Deletar_Cliente, name='cliente_detalhe'),

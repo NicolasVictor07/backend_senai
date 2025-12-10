@@ -1,5 +1,8 @@
 from django.db import models
 
+# Define a estrutura do banco de dados (Models).
+# Cada classe abaixo cria automaticamente uma tabela no banco de dados,
+
 class Fornecedor(models.Model):
     nome = models.CharField(max_length=100)
     contato = models.CharField(max_length=100)

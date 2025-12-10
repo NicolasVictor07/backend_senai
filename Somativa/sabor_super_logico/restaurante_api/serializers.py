@@ -2,7 +2,9 @@ from rest_framework import serializers
 from .models import (Fornecedor, Categoria, Ingrediente, Funcionario, Mesa, Cliente, Compra, Produto,
                       ProdutoIngrediente, Pedido, ItemPedido, Pagamento)
 
-
+# Define os Serializers, que funcionam como "tradutores" entre o banco de dados e a API.
+# Eles convertem os objetos do Python (Models) para JSON 
+# e também validam o JSON recebido antes de transformar em dados para salvar no banco.
 
 class FornecedorSerializer(serializers.ModelSerializer):
     class Meta:

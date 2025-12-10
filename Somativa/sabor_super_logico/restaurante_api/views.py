@@ -4,7 +4,11 @@ from .serializers import FornecedorSerializer, CategoriaSerializer, IngredienteS
 from rest_framework.decorators import api_view
 from rest_framework import status
 
-
+# Define a lógica da API (Views).
+#funciona como o "cérebro" da aplicação: ele recebe o pedido do usuário (Request),
+# O padrão se repete para cada tabela:
+# 1. Uma função para listar todos ou criar um novo (GET/POST).
+# 2. Uma função para ver, atualizar ou deletar um item específico pelo ID (GET/PUT/DELETE).
 @api_view(['GET', 'POST'])
 def Cliente_listarCriar(request):
     if request.method == 'GET':

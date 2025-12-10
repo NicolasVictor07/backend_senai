@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import (Fornecedor, Categoria, Ingrediente, Funcionario, Mesa, Cliente,
                     Compra, Produto, ProdutoIngrediente, Pedido, ItemPedido, Pagamento)
 
-# Register your models here.
+# Registra os modelos no painel administrativo do Django para permitir a visualização e edição dos dados.
 admin.site.register(Fornecedor)
 admin.site.register(Categoria)
 admin.site.register(Ingrediente)
